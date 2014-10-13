@@ -1,0 +1,8 @@
+Operatoria Git:
+- Agregar todo lo nuevo
+	git add --all
+- Commitear
+	git commit -m "mensaje"
+- Subir al remoto
+	git push -u origin master
+
