@@ -119,7 +119,7 @@
                     <driver>mysql</driver>
                     <security>
                         <user-name>root</user-name>
-                        <password>sarlanga</password>
+                        <password>CAMBIAR!!!!!!!!</password>
                     </security>
                     <statement>
                         <prepared-statement-cache-size>100</prepared-statement-cache-size>
