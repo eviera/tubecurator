@@ -5,6 +5,30 @@ Operatoria Git:
 	git commit -m "mensaje"
 - Subir al remoto
 	git push -u origin master
-
-GitHub
+- Bajar una copia
+	git clone https://github.com/eviera/tubecurator
+(importarlo en el Eclipse como File/Import/Maven/Existing Maven Project)	
+	
+GitHub<
 	https://github.com/eviera/tubecurator
+
+
+
+**************
+Notas
+**************
+!!Recurso duplicado al deployar
+Al deployar puede aparecer la leyenda "Duplicate resource". Esto se debe a que el deployer de las jbosstools del Eclipse agrega un deployer scanner al standalone.xml haciendo que se deployen las cosas dos veces. Para arreglarlo:
+* En la configuracion del server (doble click sobre el nombre del server en la pestaña 'Servers' del Eclipse), buscar la seccion Deployment Scanners y deschequear 'Add missing deployment scanners...' y 'Remove addeded deployemnt scanners...'
+* En el standalone.xml buscar dentro del subsystem deployment-scanner y remover la seccion que agrego las jbosstools:
+{{{
+        <subsystem xmlns="urn:jboss:domain:deployment-scanner:1.1">
+            <deployment-scanner path="deployments" relative-to="jboss.server.base.dir" scan-interval="5000"/>
+            
+            REMOVER ESTA LINEA!!
+            <deployment-scanner name="jbosstoolsscanner1" path="E:\Temp\jboss711Pruebas\standalone\deployments" scan-interval="5000" deployment-timeout="60"/>
+                        
+        </subsystem>
+
+}}}
+* Reiniciar el server
