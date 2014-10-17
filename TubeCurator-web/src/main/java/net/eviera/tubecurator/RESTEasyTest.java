@@ -7,6 +7,7 @@ import javax.ws.rs.DefaultValue;
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
+import javax.ws.rs.Produces;
 import javax.ws.rs.QueryParam;
 import javax.ws.rs.core.Response;
 
@@ -23,12 +24,15 @@ public class RESTEasyTest {
 	
 	@GET
 	@Path("/{rutaParam}")
-	public Response mensaje(@PathParam("rutaParam") String rutaParam,
+	@Produces("application/json")
+	//public Response mensaje(@PathParam("rutaParam") String rutaParam,
+	public List<TubeEntry> mensaje(@PathParam("rutaParam") String rutaParam,
 			@DefaultValue("nada") @QueryParam("pregunta") String pregunta) {
 		String respuesta = "Hola " +rutaParam  + " : " + pregunta;
 		List<TubeEntry> result = tubeEntryManager.getAll();
 		
-		return Response.status(200).entity(result).build();
+		//return Response.status(200).entity(result).build();
+		return result;
 	}
 	
 	
