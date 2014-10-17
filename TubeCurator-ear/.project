@@ -3,6 +3,7 @@
 	<name>TubeCurator-ear</name>
 	<comment></comment>
 	<projects>
+		<project>TubeCurator-ejb</project>
 	</projects>
 	<buildSpec>
 		<buildCommand>

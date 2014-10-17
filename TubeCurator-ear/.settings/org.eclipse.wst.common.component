@@ -6,6 +6,7 @@
             <dependency-type>uses</dependency-type>
         </dependent-module>
         <dependent-module archiveName="TubeCurator-ejb-0.0.1-SNAPSHOT.jar" deploy-path="/" handle="module:/resource/TubeCurator-ejb/TubeCurator-ejb">
+            <dependent-object/>
             <dependency-type>uses</dependency-type>
         </dependent-module>
         <dependent-module archiveName="junit-4.10.jar" deploy-path="/lib" handle="module:/classpath/var/M2_REPO/junit/junit/4.10/junit-4.10.jar">
