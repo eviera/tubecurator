@@ -12,10 +12,13 @@
 	
 	<title>TubeCurator</title>
 </head>
-<body role="document">
+<body role="document" ng-controller="TubeController as ctrl">
 	
 	<div class="container" role="main">
 		hello asd {{4 + 6}}
+		<div ng-repeat="tubeEntry in ctrl.tubeEntries">
+			{{ tubeEntry.url }}
+		</div>
 	</div>
 	
 	
