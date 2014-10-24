@@ -5,6 +5,8 @@
 		this.tubeEntries = [];
 		$http.get('http://localhost:18080/tubecurator/rest/resttest/tito?pregunta=caca').success(function(data) {
 			ctrl.tubeEntries = data; 
+		}).error(function(data) {
+			alert(data);
 		});
 
 	}]);

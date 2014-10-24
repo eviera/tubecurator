@@ -1,4 +1,12 @@
 body {
-	padding-top: 20px;
 	padding-bottom: 30px;
 }
+
+.navbar {
+	background-color: #cd201f;
+	border-color: #000;
+}
+
+.navbar-default .navbar-brand, .navbar-default .navbar-nav li a {
+	color: #FFF;
+} 
