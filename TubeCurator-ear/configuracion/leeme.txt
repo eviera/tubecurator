@@ -32,3 +32,6 @@ Al deployar puede aparecer la leyenda "Duplicate resource". Esto se debe a que e
 
 }}}
 * Reiniciar el server
+
+
+!!En la mac, el mysql se encuentra en /usr/local/mysql, para conectarse es: /usr/local/mysql/bin/mysql -h localhost -u root -pla_password  
