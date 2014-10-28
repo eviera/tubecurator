@@ -8,6 +8,7 @@
 	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
 	<link rel="stylesheet" type="text/css" href="css/theme.css">
 	<script type="text/javascript" src="js/angular.min.js"></script>
+	<script type="text/javascript" src="js/angular-sanitize.min.js"></script>
 	<script type="text/javascript" src="js/app.js"></script>
 	
 	<title>TubeCurator</title>
@@ -44,10 +45,15 @@
 
 	<div class="container" role="main">
 
-		hello asd {{4 + 6}}
-		
-		<div ng-repeat="tubeEntry in ctrl.tubeEntries">
-			{{ tubeEntry.url }}
+		<div class="tube-entry-container" ng-repeat="tubeEntry in ctrl.tubeEntries">
+			<h2 class="tube-entry-title">{{ tubeEntry.title }}</h2>
+			<p class="tube-entry-comment">{{ tubeEntry.comment }}</p>
+			<iframe class="tube-entry-video" type="text/html" width="75%" height="500"
+ 					ng-src="{{trustSrc(tubeEntry.url)}}"
+ 					frameborder="0">
+ 				</iframe>				
+			<p class="tube-entry-date">{{ tubeEntry.creationDate }}</p>
+			<em class="tube-entry-footer">{{ tubeEntry.tagCloud }}</em>
 		</div>
 	</div>
 	

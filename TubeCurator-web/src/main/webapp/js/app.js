@@ -1,14 +1,19 @@
 (function() {
-	var app = angular.module('tubeCurator', []);
-	app.controller('TubeController', ['$http', function($http) {
+	var app = angular.module('tubeCurator', ['ngSanitize']);
+	
+	app.controller('TubeController', ['$scope', '$http','$sce', function($scope, $http, $sce) {
 		var ctrl = this;
 		this.tubeEntries = [];
-		$http.get('http://localhost:18080/tubecurator/rest/resttest/tito?pregunta=caca').success(function(data) {
+		$http.get('/tubecurator/rest/tube/all').success(function(data) {
 			ctrl.tubeEntries = data; 
 		}).error(function(data) {
 			alert(data);
 		});
 
+		$scope.trustSrc = function(src){
+			return $sce.trustAsResourceUrl(src);
+		};
+		
 	}]);
 	
 })();
