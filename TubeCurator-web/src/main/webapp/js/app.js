@@ -1,5 +1,18 @@
+'use strict';
+
 (function() {
-	var app = angular.module('tubeCurator', ['ngSanitize', 'ngResource']);
+	var app = angular.module('tubeCurator', ['ngSanitize', 'ngResource', 'ngRoute']);
+	
+	app.config(['$routeProvider', function($routeProvider) {
+		$routeProvider.
+			when('/entries', {
+				templateUrl: 'partials/entries.html',
+				controller: 'TubeController'
+			}).
+			otherwise({
+				redirectTo: '/entries'
+			});
+	}]);
 	
 	app.factory('TubeEntryService', ['$resource', function($resource) {
 		return $resource('/tubecurator/rest/tube/entries',{}, {
@@ -9,14 +22,6 @@
 	
 	app.controller('TubeController', ['$scope', '$sce', 'TubeEntryService', function($scope, $sce, TubeEntryService) {
 		var ctrl = this;
-		/*
-		this.tubeEntries = [];
-		$http.get('/tubecurator/rest/tube/all').success(function(data) {
-			ctrl.tubeEntries = data; 
-		}).error(function(data) {
-			alert(data);
-		});
-		*/
 		ctrl.tubeEntries = TubeEntryService.query();
 			
 		$scope.trustSrc = function(src){
