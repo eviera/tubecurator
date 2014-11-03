@@ -17,7 +17,7 @@ public class TubeRest {
 	private TubeEntryManagerBean tubeEntryManager;
 
 	@GET
-	@Path("/all")
+	@Path("/entries")
 	@Produces("application/json")
 	public List<TubeEntry> getAll() {
 		List<TubeEntry> result = tubeEntryManager.getAll();

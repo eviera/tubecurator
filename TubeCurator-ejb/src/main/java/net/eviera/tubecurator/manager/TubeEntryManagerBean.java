@@ -21,7 +21,7 @@ public class TubeEntryManagerBean {
 	}
     
     public List<TubeEntry> getAll() {
-    	Query query = em.createQuery("from TubeEntry");
+    	Query query = em.createQuery("from TubeEntry order by id desc");
     	@SuppressWarnings("unchecked")
 		List<TubeEntry> result = query.getResultList();
     	if (result == null) {
