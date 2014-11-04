@@ -1,6 +1,8 @@
-'use strict';
+/* global angular: false */	
 
 (function() {
+	'use strict';
+	
 	var app = angular.module('tubeCurator', ['ngSanitize', 'ngResource', 'ngRoute']);
 	
 	app.config(['$routeProvider', function($routeProvider) {
