@@ -1,5 +1,5 @@
-<div class="tube-entry-container" ng-repeat="tubeEntry in ctrl.tubeEntries | filter:queryEntries">
-	<h2 class="tube-entry-title">{{ tubeEntry.title }}</h2>
+<div class="tube-entry-container" ng-repeat="tubeEntry in tubeEntries | filter:queryEntries">
+	<h2 class="tube-entry-title"><a href="#/entries/{{tubeEntry.id}}">{{ tubeEntry.title }}</a></h2>
 	<p class="tube-entry-comment">{{ tubeEntry.comment }}</p>
 	<div class="row">
 		<div class="col-sm-10">
