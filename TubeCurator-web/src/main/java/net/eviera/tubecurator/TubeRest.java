@@ -10,14 +10,13 @@ import javax.ws.rs.Produces;
 import net.eviera.tubecurator.entity.TubeEntry;
 import net.eviera.tubecurator.manager.TubeEntryManagerBean;
 
-@Path("/tube")
+@Path("/tubeentries")
 public class TubeRest {
 
 	@EJB
 	private TubeEntryManagerBean tubeEntryManager;
 
 	@GET
-	@Path("/entries")
 	@Produces("application/json")
 	public List<TubeEntry> getAll() {
 		List<TubeEntry> result = tubeEntryManager.getAll();

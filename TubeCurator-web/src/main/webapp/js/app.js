@@ -17,9 +17,7 @@
 	}]);
 	
 	app.factory('TubeEntryService', ['$resource', function($resource) {
-		return $resource('/tubecurator/rest/tube/entries',{}, {
-			query: {method: 'GET', params:{}, isArray:true}
-		});
+		return $resource('/tubecurator/rest/tubeentries/:id');
 	}]);
 	
 	app.controller('TubeController', ['$scope', '$sce', 'TubeEntryService', function($scope, $sce, TubeEntryService) {
