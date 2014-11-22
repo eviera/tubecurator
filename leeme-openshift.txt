@@ -1,0 +1,26 @@
+Para subir a openshift:
+- Generar una key ssh en la maquina actual:
+-- ssh-keygen
+- Loguearse a la pagina de openshift y agregar en settings la nueva clave publica (ver que no haya enters)
+- Ir al directorio de tubecurator y agregar el repositorio remoto
+-- git remote add openshift {url_del_git_clone_del_proyecto_openshift}
+- Comprobar el estado del remoto
+-- git remote show openshift
+- Pushear los cambios 
+-- git push openshift master
+
+Para instalar las rhc tools:
+- Instalar ruby 1.9 (http://rubyinstaller.org/downloads/) (conviene usar la 1.9)
+-- Asegurarse que configure el PATH!
+- Correr el gem:
+-- gem install rhc
+- Setup:
+-- rhc setup
+
+Ver el log:
+- rhc ssh -a testjas7
+- cd $OPENSHIFT_LOG_DIR
+- less jbossas.log
+
+- URL
+http://testjas7-ideafix.rhcloud.com/tubecurator

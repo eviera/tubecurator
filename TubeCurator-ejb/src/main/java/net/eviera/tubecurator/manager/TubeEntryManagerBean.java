@@ -29,5 +29,10 @@ public class TubeEntryManagerBean {
     	}
     	return result;
     }
+
+	public TubeEntry getById(Long id) {
+    	TubeEntry result = em.find(TubeEntry.class, id);
+    	return result;
+	}
     
 }
