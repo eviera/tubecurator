@@ -1,0 +1,4 @@
+Dependencias del grunt:
+
+npm install grunt --save-dev
+npm install time-grunt --save
